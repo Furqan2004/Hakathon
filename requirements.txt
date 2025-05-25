@@ -1,4 +1,4 @@
 flask 
 PyMuPDF
-opencv-python
+opencv-python-headless
 pytesseract
