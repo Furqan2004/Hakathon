@@ -1,0 +1,4 @@
+flask 
+PyMuPDF
+opencv-python
+pytesseract
