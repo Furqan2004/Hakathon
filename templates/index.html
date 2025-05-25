@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+    <title>Medical Report Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📑 Upload Medical Report</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Analyze</button>
+        </form>
+
+        <!-- Search by ID button -->
+        <a href="{{ url_for('search') }}" class="nav-button">🔍 Search by ID</a>
+
+        {% if ocr_results %}
+            <h2>📝 OCR Text</h2>
+            <pre>{{ ocr_results }}</pre>
+
+            <h2>📊 NLP Extracted Data</h2>
+            <pre>{{ nlp_data }}</pre>
+
+            <h2>🤖 Gemini AI Analysis</h2>
+            <pre>{{ gemini_response }}</pre>
+
+            <h2>✅ Suggestion</h2>
+            <b>{{ suggestion }}</b>
+
+            <h2>🔗 Your Report ID</h2>
+            <p>Please save this ID to retrieve your report in the future:</p>
+            <pre>{{ file_id }}</pre>
+
+            <h2>📂 Download / View File</h2>
+            <a href="{{ file_url }}" target="_blank">{{ file_url }}</a>
+
+            <h2>🔍 Retrieve Later</h2>
+            <div class="button-row">
+                <a href="{{ url_for('search') }}" class="nav-button">🔍 Search by ID</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

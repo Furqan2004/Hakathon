@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Search Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Search Report by ID</h1>
+        <form method="POST">
+            <input type="text" name="file_id" placeholder="Enter your report ID" required style="width:100%;padding:1em;">
+            <button type="submit">Search</button>
+        </form>
+        <!-- Home button -->
+        <div class="button-row">
+            <a href="{{ url_for('index') }}" class="nav-button">🏠 Home</a>
+        </div>
+    </div>
+</body>
+</html>
