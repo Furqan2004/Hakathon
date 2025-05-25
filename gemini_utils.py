@@ -39,7 +39,7 @@ def generate_gemini_response(api_key: str, prompt: str) -> str:
         raise KeyError("No 'text' or 'parts' in content")
 
 def analyze_with_gemini(report_text: str):
-    api_key = "AIzaSyBYkzg3FnvH5tU1Ukq_rGkGN4ZUjYki_RQ"  # hardcoded here
+    api_key = os.getenv("API_KEY")   # hardcoded here
     
     prompt = f"""
 You are a highly intelligent medical assistant AI. Analyze the following patient medical report and return a JSON response with the following fields:
