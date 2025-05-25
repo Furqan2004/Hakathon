@@ -2,7 +2,7 @@ import requests
 import json
 
 def extract_columns_and_data(text: str) -> str:
-    API_KEY = "AIzaSyBYkzg3FnvH5tU1Ukq_rGkGN4ZUjYki_RQ"  # 🔐 Replace with your actual Gemini API key
+    API_KEY = os.getenv("API_KEY")   # 🔐 Replace with your actual Gemini API key
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={API_KEY}"
 
     prompt = (
